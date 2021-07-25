@@ -5,9 +5,9 @@ import pickle
 st.markdown("<h1 style= 'text-align:center; color : red;'> Old Car Price Predictor </h1>" , unsafe_allow_html = True)
      
 data = pd.read_csv('clean_data.csv')
-Names = data['name'].drop_duplicates()
+
 company = st.selectbox('Company' ,data['company'].unique())
-name =st.selectbox('CarName' ,Names)
+name =st.selectbox('CarName' ,data['name'].unique())
 year =  st.slider('Year',2000 , 2021 , 2005 ,1)
 
 kms_driven = st.slider('Kms-driven ',10000 , 500000 , 50000 ,10000)
