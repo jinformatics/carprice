@@ -4,7 +4,7 @@ import pickle
 
 st.markdown("<h1 style= 'text-align:center; color : red;'> Old Car Price Predictor </h1>" , unsafe_allow_html = True)
      
-data = pd.read_csv('clean_data.csv')
+data = pd.read_csv('car.csv')
 Name = data['name'].drop_duplicates()
 company = st.selectbox('Company' ,data['company'].unique())
 name =st.selectbox('CarName' ,Name)
