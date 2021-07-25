@@ -6,14 +6,14 @@ st.markdown("<h1 style= 'text-align:center; color : red;'> Old Car Price Predict
      
 data = pd.read_csv('clean_data.csv')
 Name = data['name'].drop_duplicates()
-company = st.sidebar.selectbox('Company' ,data['company'].unique())
-name =st.sidebar.selectbox('CarName' ,Name)
-year =  st.sidebar.slider('Year',2000 , 2021 , 2005 ,1)
+company = st.selectbox('Company' ,data['company'].unique())
+name =st.selectbox('CarName' ,Name)
+year =  st.slider('Year',2000 , 2021 , 2005 ,1)
 
-kms_driven = st.sidebar.slider('Kms-driven ',10000 , 500000 , 50000 ,10000)
+kms_driven = st.slider('Kms-driven ',10000 , 500000 , 50000 ,10000)
 
 option =['Petrol','Diesel','LPG']
-fuel = st.sidebar.selectbox('Fuel-Type ' ,option)
+fuel = st.selectbox('Fuel-Type ' ,option)
 
 model = pickle.load(open('model.pkl','rb'))
 val = model.predict(pd.DataFrame([[name ,company ,year ,kms_driven, fuel]] , columns=[ 'name' ,'company' ,'year' ,'kms_driven', 'fuel_type']))
