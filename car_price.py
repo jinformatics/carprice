@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 import pickle
 
-st.markdown("<h1 style= 'text-align:center; color : red;'> Old Car Price Predictor </h1>" , unsafe_allow_html = True)
+st.markdown("<h1 style= 'text-align:center; color : green;'> Old Car Price Predictor </h1>" , unsafe_allow_html = True)
      
 data = pd.read_csv('clean_data.csv')
 
